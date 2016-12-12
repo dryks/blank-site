@@ -3,28 +3,28 @@ $errors = array();
 $missing = array();
 // check if the form has been submitted
 if (isset($_POST['send'])) {
+	require('_assets/includes/mailvars.inc.php');
   // email processing script
   $visitor_email = $_POST['email'];
-  $to = 'infotest@mailinator.com';
-  $subject = 'Feedback from Company';
+  $subject = "Feedback from " . $companyName;
   // list expected fields
   $expected = array('name', 'phone', 'email', 'subject', 'comments');
   // set required fields
   $required = array('name', 'email', 'subject', 'comments');
   // create additional headers
-  $headers = "From: Company<info@company.com>\r\n";
+  $headers = "From: " . $companyName ."<info@" . $domain . ">\r\n";
   $headers .= 'Content-Type: text/plain; charset=utf-8';
   require('_assets/includes/processmail.inc.php');
   if ($mailSent) {
 	  $toCC = $visitor_email;
-	  $subjectCC = 'Feedback from Company';
-	  $headersCC = "From: Company<DoNotReply@company.com>\r\n";
+	  $subjectCC = "Feedback from " . $companyName;
+	  $headersCC = "From: " . $companyName . "<DoNotReply@" . $domain . ">\r\n";
 	  $headersCC .= 'Content-Type: text/plain; charset=utf-8';
 	  $messageCC = $message;
 	  $messageCC .= "This is an automated response, please do not respond to this email message as the address is not monitored.  I will be in contact with you as soon as I am able.\n";
 	  $messageCC .= "-Staff\n";
-	  $messageCC .= "Company\n";
-	  $messageCC .= "www.Company.com";
+	  $messageCC .= $companyName . "\n";
+	  $messageCC .= "www." . $domain;
 	  $mailSentCC = mail($toCC, $subjectCC, $messageCC, $headersCC );
 	  if( $mailSentCC ) {
 		  header('Location: thank-you.php');
