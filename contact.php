@@ -50,8 +50,7 @@ if (isset($_POST['send'])) {
           <label>
           <?php 
             if ($missing && in_array('name', $missing)) { ?>
-          <div class="alert alert-danger" role="alert">Name Required</div>
-          <!--<span class="text-error">Please enter your name</span>-->
+          <div class="alert alert-danger" role="alert">Please Enter Your Name</div>
           <?php 
             } else {
           ?>
@@ -71,11 +70,11 @@ if (isset($_POST['send'])) {
             <?php 
         if ($missing && in_array('email', $missing)) { 
         ?>
-            <span class="text-error">Please enter your email address</span>
+        	<div class="alert alert-danger" role="alert">Please enter your email address</div>
             <?php 
         } elseif (isset($errors['email'])) { 
         ?>
-              <span class="text-warning">Invalid email address</span>
+        			<div class="alert alert-danger" role="alert">Invalid Email Address</div>
               <?php 
         } else { 
         ?>
@@ -111,7 +110,7 @@ if (isset($_POST['send'])) {
           <label>
             <?php 
       if ($missing && in_array('comments', $missing)) { ?>
-            <span class="text-error">Please enter your comments</span>
+      			<div class="alert alert-danger" role="alert">Please enter your comments</div>
             <?php 
       } else { 
       ?>
