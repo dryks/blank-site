@@ -9,7 +9,7 @@ include( '_assets/includes/title.inc.php' );
 <?php if (isset($title)) echo "- {$title}"; ?>
 - Anytown USA</title>
 <link href="_assets/css/bootstrap.css" rel="stylesheet" />
-<link href="_assets/css/mrgconsultingus-styles.css" rel="stylesheet" />
+<link href="_assets/css/styles.css" rel="stylesheet" />
 </head>
 <body>
 <header>
