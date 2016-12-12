@@ -51,23 +51,28 @@
           <div class="form-group">
             <label>Subject</label>
             <select id="subject" name="subject" class="form-control">
+            
               <option value="na">Choose one:</option>
-              <option value="btcsales"
+              
+              <option value="option1"
 					<?php
-					if ($_POST && $_POST['subject'] == 'btcsales') {
+					if ($_POST && $_POST['subject'] == 'option1') {
 					  echo 'selected';
-					} ?>>BTC Sales</option>
-              <option value="merchant-info"
+					} ?>>Option 1</option>
+          
+              <option value="option2"
 					<?php
-					if ($_POST && $_POST['subject'] == 'merchant-info') {
+					if ($_POST && $_POST['subject'] == 'option2') {
 					  echo 'selected';
-					} ?>>Merchant Information</option>
-              <option value="feedback"
+					} ?>>Option 2</option>
+          
+              <option value="option3"
 					<?php
-					if ($_POST && $_POST['subject'] == 'feedback') {
+					if ($_POST && $_POST['subject'] == 'option3') {
 					  echo 'selected';
-					} ?>>Feedback</option>
+					} ?>>Option 3</option>
             </select>
+            
           </div>
           <div class="form-group">
             <label>
