@@ -4,7 +4,11 @@
 <body>
 -->
 <div class="container">
-	<h1>Contact</h1>    
+	<div class="row">
+  	<div class="col-md-10 col-md-offset-1">
+			<h1>Contact</h1> 
+    </div>
+  </div>   
 </div>
 <?php include '_assets/includes/footer.inc.php' ?>
 <!-- Page Specific JS --> 
