@@ -1,0 +1,112 @@
+[1mdiff --git a/contact.php b/contact.php[m
+[1mindex f671e6f..e8dc818 100644[m
+[1m--- a/contact.php[m
+[1m+++ b/contact.php[m
+[36m@@ -1,20 +1,93 @@[m
+ <?php include '_assets/includes/header.inc.php' ?>[m
+[31m-[m
+[31m-<!-- Opening Body tag is enclosed inside of header.inc.php [m
+[31m-<body>[m
+[31m-[m
+[31m-<div class="container">[m
+[31m-	<div class="row">[m
+[31m--->[m
+[31m-  	<div class="col-md-10 col-md-offset-1">[m
+[31m-			<h1>Contact</h1> [m
+[32m+[m[32m    <div class="col-md-8 col-md-offset-2">[m
+[32m+[m[32m      <h1>Contact</h1>[m
+       <h4>Please be sure to include a <strong>valid email address</strong></h4>[m
+[32m+[m[32m      <hr />[m
+[32m+[m[32m      <form id="feedback" method="post" action="">[m
+[32m+[m[32m        <?php if (($_POST && $suspect) || ($_POST && isset($errors['mailfail']))) { ?>[m
+[32m+[m[32m        <p class="warning">Sorry, your mail could not be sent. Please try later.</p>[m
+[32m+[m[32m        <?php } elseif ($missing || $errors) { ?>[m
+[32m+[m[32m        <h3 class="text-error text-center">Please fix the item(s) indicated</h3>[m
+[32m+[m[32m        <?php } ?>[m
+[32m+[m[32m          <div class="form-group">[m
+[32m+[m[32m            <label>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m								[32mif ($missing && in_array('name', $missing)) { ?>[m
+[32m+[m[41m              [m	[32m<span class="text-error">Please enter your name</span>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m								[32m} else {[m
+[32m+[m							[32m?>[m
+[32m+[m[32m              Name:[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m								[32m}[m[41m [m
+[32m+[m							[32m?>[m
+[32m+[m[32m            </label>[m
+[32m+[m[32m            <input name="name" id="name" type="text" class="form-control" placeholder="Name *Required*">[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div class="form-group">[m
+[32m+[m[32m            <label>Phone Number</label>[m
+[32m+[m[32m            <input name="phone" id="phone" type="tel" class="form-control" placeholder="Phone *Optional*">[m
+[32m+[m[41m         [m	[32m</div>[m
+[32m+[m[32m          <div class="form-group">[m
+[32m+[m[32m            <label>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m						[32mif ($missing && in_array('email', $missing)) {[m[41m [m
+[32m+[m						[32m?>[m
+[32m+[m[32m              <span class="text-error">Please enter your email address</span>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m						[32m} elseif (isset($errors['email'])) {[m[41m [m
+[32m+[m						[32m?>[m
+[32m+[m[32m                <span class="text-warning">Invalid email address</span>[m
+[32m+[m[32m                <?php[m[41m [m
+[32m+[m						[32m} else {[m[41m [m
+[32m+[m						[32m?>[m
+[32m+[m[32m                Email Address:[m
+[32m+[m[32m                <?php[m[41m [m
+[32m+[m						[32m}[m[41m [m
+[32m+[m						[32m?>[m
+[32m+[m[32m            </label>[m
+[32m+[m[32m            <input name="email" id="email" type="text" class="form-control" placeholder="Email Address *Required*">[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div class="form-group">[m
+[32m+[m[32m            <label>Subject</label>[m
+[32m+[m[32m            <select id="subject" name="subject" class="form-control">[m
+[32m+[m[32m              <option value="na">Choose one:</option>[m
+[32m+[m[32m              <option value="btcsales"[m
+[32m+[m					[32m<?php[m
+[32m+[m					[32mif ($_POST && $_POST['subject'] == 'btcsales') {[m
+[32m+[m					[32m  echo 'selected';[m
+[32m+[m					[32m} ?>>BTC Sales</option>[m
+[32m+[m[32m              <option value="merchant-info"[m
+[32m+[m					[32m<?php[m
+[32m+[m					[32mif ($_POST && $_POST['subject'] == 'merchant-info') {[m
+[32m+[m					[32m  echo 'selected';[m
+[32m+[m					[32m} ?>>Merchant Information</option>[m
+[32m+[m[32m              <option value="feedback"[m
+[32m+[m					[32m<?php[m
+[32m+[m					[32mif ($_POST && $_POST['subject'] == 'feedback') {[m
+[32m+[m					[32m  echo 'selected';[m
+[32m+[m					[32m} ?>>Feedback</option>[m
+[32m+[m[32m            </select>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div class="form-group">[m
+[32m+[m[32m            <label>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m					[32mif ($missing && in_array('comments', $missing)) { ?>[m
+[32m+[m[32m              <span class="text-error">Please enter your comments</span>[m
+[32m+[m[32m              <?php[m[41m [m
+[32m+[m					[32m} else {[m[41m [m
+[32m+[m					[32m?>[m
+[32m+[m[32m              Message:[m
+[32m+[m[32m              <?php[m
+[32m+[m					[32m}[m
+[32m+[m					[32m?>[m
+[32m+[m[32m            </label>[m
+[32m+[m[32m            <textarea name="comments" id="comments" class="form-control" rows="10" placeholder="Please enter your comments here..."></textarea>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <button type="submit" name="send" id="send" class="btn btn-inverse pull-right">Send</button>[m
+[32m+[m[32m      </form>[m
+     </div>[m
+[31m-<!--[m
+[31m-  </div>   [m
+[31m-</div>[m
+[31m--->[m
+[31m-<?php include '_assets/includes/footer.inc.php' ?>[m
+[32m+[m[32m    <?php include '_assets/includes/footer.inc.php' ?>[m
+ <!-- Page Specific JS --> [m
+ [m
+ <!-- End Page Specific JS -->[m
