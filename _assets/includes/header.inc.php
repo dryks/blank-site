@@ -15,3 +15,5 @@ include( '_assets/includes/title.inc.php' );
 <header>
   <?php include '_assets/includes/menu.inc.php' ?>
 </header>
+<div class="container">
+	<div class="row">

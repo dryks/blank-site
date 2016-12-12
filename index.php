@@ -1,10 +1,14 @@
 <?php include '_assets/includes/header.inc.php' ?>
 <!-- Opening Body tag is enclosed inside of header.inc.php 
 <body>
--->
 <div class="container">
-  <h1>Home</h1>
+  <div class="row">
+-->
+    <h1>Home</h1>
+<!--  
+	</div>
 </div>
+-->
 <?php include '_assets/includes/footer.inc.php' ?>
 <!-- Page Specific JS --> 
 
