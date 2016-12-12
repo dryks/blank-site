@@ -67,19 +67,19 @@ if (isset($_POST['send'])) {
         </div>
         <div class="form-group">
           <label>
-            <?php 
+          <?php 
         if ($missing && in_array('email', $missing)) { 
         ?>
-        	<div class="alert alert-danger" role="alert">Please enter your email address</div>
-            <?php 
+          <div class="alert alert-danger" role="alert">Please enter your email address</div>
+          <?php 
         } elseif (isset($errors['email'])) { 
         ?>
-        			<div class="alert alert-danger" role="alert">Invalid Email Address</div>
-              <?php 
+            <div class="alert alert-danger" role="alert">Invalid Email Address</div>
+            <?php 
         } else { 
         ?>
-              Email Address:
-              <?php 
+            Email Address:
+            <?php 
         } 
         ?>
           </label>
@@ -108,14 +108,14 @@ if (isset($_POST['send'])) {
         </div>
         <div class="form-group">
           <label>
-            <?php 
+          <?php 
       if ($missing && in_array('comments', $missing)) { ?>
-      			<div class="alert alert-danger" role="alert">Please enter your comments</div>
-            <?php 
+          <div class="alert alert-danger" role="alert">Please enter your comments</div>
+          <?php 
       } else { 
       ?>
-            Message:
-            <?php
+          Message:
+          <?php
       }
       ?>
           </label>
