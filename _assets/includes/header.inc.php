@@ -5,6 +5,7 @@ include( '_assets/includes/title.inc.php' );
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Company Name
 <?php if (isset($title)) echo "- {$title}"; ?>
 - Anytown USA</title>
@@ -16,4 +17,4 @@ include( '_assets/includes/title.inc.php' );
   <?php include '_assets/includes/menu.inc.php' ?>
 </header>
 <div class="container">
-	<div class="row">
+<div class="row">
